@@ -1,0 +1,5 @@
+\skohler16@gmail.com, hello, this is a test! did this get added to my new file i made
+sdaicmd@gmail.com, some text, this is the text of my message
+\sdaicmd@gmail.com, some text, this is the text of my message\
+my@email.com, hello, this is my hello
+Email:skohler16@gmail.com, Subject:sdfgh, Message: dsfggdf
