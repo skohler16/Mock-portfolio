@@ -19,17 +19,17 @@ def write_to_file(data):
         file = database.write(f'\nEmail:{email}, Subject:{subject}, Message: {message}')
 
 def write_to_CSV(data):
-    with open('database.csv', mode='a') as csv_database:
+    with open('database.csv',newline=" ", mode='a') as csv_database:
         email = data['email']
         subject = data['subject']
         message = data['message']
-        csv_writer = csv.writer(csv_database)
-
+        csv_writer = csv.writer(csv_database, delimiter=',', quotechar='|', quoting= csv.QUOTE_MINIMAL)
+        csv_writer.writerow([email,subject,message])
 @app.route('/submit_form', methods=['POST', 'GET'])
 def submit_form():
     if request.method == 'POST':
         data = request.form.to_dict()
-        write_to_file(data)
+        write_to_CSV(data)
         return redirect('/thankyou.html')
     else:
         return 'uhhh... ya messed up fool'
